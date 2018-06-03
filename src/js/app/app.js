@@ -4,7 +4,5 @@
  */
 'use strict';
 module.exports=angular.module('app',['ionic'])
-.run('')
-.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+// .run('')
 
-}])
