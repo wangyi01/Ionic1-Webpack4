@@ -1,0 +1,396 @@
+//初始化
+.font-size(@px){font-size: unit(@px/37.5, rem);}
+.width(@px){width: unit(@px/37.5, rem);}
+.width(@px){width: unit(@px/37.5, rem);}
+.min-width(@px){min-width: unit(@px/37.5, rem);}
+.max-width(@px){max-width: unit(@px/37.5, rem);}
+.min-height(@px){min-height: unit(@px/37.5, rem);}
+.height(@px){height: unit(@px/37.5, rem);}
+.max-height(@px){max-height: unit(@px/37.5, rem);}
+.line-height(@px){line-height: unit(@px/37.5, rem);}
+*{box-sizing:border-box;}
+.letter-spacing(@px){letter-spacing:unit(@px/37.5,rem);}
+//padding设置
+.padding(@px){padding:unit(@px/37.5,rem);}
+.padding-top(@px){padding-top: unit(@px/37.5, rem);}
+.padding-right(@px){padding-right: unit(@px/37.5, rem);}
+.padding-bottom(@px){padding-bottom: unit(@px/37.5, rem);}
+.padding-left(@px){padding-left: unit(@px/37.5, rem);}
+//margin设置
+.margin(@px){margin:unit(@px/37.5,rem);}
+.margin-top(@px){margin-top: unit(@px/37.5, rem);}
+.margin-right(@px){margin-right: unit(@px/37.5, rem);}
+.margin-bottom(@px){margin-bottom: unit(@px/37.5, rem);}   
+.margin-left(@px){margin-left: unit(@px/37.5, rem);}
+//position设置
+.top(@px){top: unit(@px/37.5, rem);}
+.left(@px){left: unit(@px/37.5, rem);}
+.right(@px){right: unit(@px/37.5, rem);}
+.bottom(@px){bottom: unit(@px/37.5, rem);}
+//背景
+.background-size(@px){background-size:@px @px}
+//border
+.border-radius(@px) {border-radius: unit(@px/37.5, rem);}
+//4条边框
+.four-border{
+  position: relative;
+  border:none;
+}
+//边框颜色
+.four-border:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid @_1pxcolor;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}
+//上下边框
+.top-bottom-border{
+  position: relative;
+  border:none;
+}
+.top-bottom-border:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 1px solid @_1pxcolor;
+  border-bottom:1px solid @_1pxcolor;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}
+//上边框
+.top-border{
+  position: relative;
+  border:none;
+}
+.top-border::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 1px solid @_1pxcolor;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200%;
+  height:200%;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}
+//右边框
+.right-border{
+  position: relative;
+  border:none;
+}
+.right-border::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-right: 1px solid @_1pxcolor;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}
+//右边框
+.left-border{
+  position: relative;
+  border:none;
+}
+.left-border::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 1px solid @_1pxcolor;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}
+//下边框
+.bottom-border{
+  position: relative;
+  border:none;
+}
+.bottom-border::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid @_1pxcolor;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}
+//transform设置
+.transformX(){
+	-webkit-transform:translateX(-50%);
+	-moz-transform:translateX(-50%);
+	-ms-transform:translateX(-50%);
+	-o-transform:translateX(-50%);
+	transform:translateX(-50%);
+}
+.transformY(){
+	-webkit-transform:translateY(-50%);
+	-moz-transform:translateY(-50%);
+	-ms-transform:translateY(-50%);
+	-o-transform:translateY(-50%);
+	transform:translateY(-50%);
+}
+.transform(){
+	-webkit-transform:translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	-o-transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%);
+}
+html,body{
+  width:100%;
+  height:100%;
+}
+body{
+  // .font-size(14);
+  font-family:"SimSun","Microsoft YaHei",sans-serif;
+  &:after{
+		content:"";
+		display:block;
+		clear:both;
+	}
+}
+
+p,ul,li,dl,dt,dd,a,h1,h2,h3,h4,h5,h6{
+  margin:0;
+  padding:0;
+  text-decoration:none;
+  list-style:none;
+}
+.f-r{
+  float:right;
+}
+.selectable{
+  -webkit-user-select: auto;
+   -moz-user-select:auto;
+   -ms-user-select:auto;
+   -o-user-select:auto;
+}
+.clear::after{
+  content:"";
+  display:table;
+  clear:both;
+}
+.clear::before{
+  content:"";
+  display:table;
+  clear:both;
+}
+//tabs图标
+.bar-home{background:url(../img/home/icon_home_p@3x.png) no-repeat center;}
+.bar-home-off{background:url(../img/home/icon_home_n@3x.png) no-repeat center;}
+.bar-bssk{background:url(../img/home/icon_bssk_p@3x.png) no-repeat center;}
+.bar-bssk-off{background:url(../img/home/icon_bssk_n@3x.png) no-repeat center;}
+.bar-result{background:url(../img/home/icon_kjjg_p@3x.png) no-repeat center;}
+.bar-result-off{background:url(../img/home/icon_kjjg_n@3x.png) no-repeat center;}
+.bar-my{background:url(../img/home/icon_my_p@3x.png) no-repeat center center;}
+.bar-my-off{background:url(../img/home/icon_my_n@3x.png) no-repeat center;}
+.bar-discover{background:url(../img/home/icon_faxian_slected@3x.png) no-repeat center;}
+.bar-discover-off{background:url(../img/home/icon_faxian_unslected@3x.png) no-repeat center;}
+.bar-home,.bar-home-off,.bar-bssk,.bar-bssk-off,.bar-result,.bar-result-off,.bar-my,.bar-my-off,.bar-discover,.bar-discover-off{background-size:30px 30px;}
+@import "variable.less";
+//头部
+@import "modal/page-header.less";
+//下载页面
+@import "tabs_homepage/download.less";
+//注册验证码弹框
+@import "popup/popup.less";
+//注册确认报错弹框
+@import "popup/alert.less";
+//是否实名认证弹框
+@import "popup/realName.less";
+//删除银行卡弹框
+@import "popup/delbank.less";
+//弹框
+@import "popup/msg.less";
+//主页
+@import "tabs_homepage/homepage.less";
+//比赛实况
+@import "tabs_homepage/live/live.less";
+//未完赛球评等主头部信息
+@import "tabs_homepage/live/unend_comments.less";
+/////////未完赛
+//足球实况
+@import "tabs_homepage/live/event.less";
+//篮球实况
+@import "tabs_homepage/live/btbevent.less";
+//分析
+@import "tabs_homepage/live/analyze.less";
+// 开奖结果
+@import "tabs_account/gameresult/gameresult.less";
+//我的
+@import "tabs_account/account.less";
+//注册和登录
+@import "tabs_account/login/register-login.less";
+//登录修改密码
+@import "tabs_account/login/forget_pwd.less";
+//个人设置
+@import "tabs_account/usercenter/usercenter.less";
+//修改昵称
+@import "tabs_account/usercenter/changename.less";
+//个性签名
+@import "tabs_account/usercenter/changesignture.less";
+//QQ
+@import "tabs_account/usercenter/addqq.less";
+//密码重置
+@import "tabs_account/usercenter/changepwd.less";
+//银行密码和登录密码重置
+@import "tabs_account/usercenter/changebank_loginpwd.less";
+//实名认证
+@import "tabs_account/usercenter/realname.less";
+//我的银行
+@import "tabs_account/mybank/mybank.less";
+//我的银行存入
+@import "tabs_account/mybank/bankin.less";
+//我的银行取出
+@import "tabs_account/mybank/bankout.less";
+//充值和提现
+@import "tabs_account/deposit/recharge_deposit.less";
+@import "tabs_account/deposit/quick_payment.less";//快捷支付
+@import "tabs_account/deposit/barcode_payment.less";//扫码支付
+@import "tabs_account/deposit/depositstate.less";//支付结果
+@import "tabs_account/deposit/openpay.less";//开通快捷支付
+//添加银行卡
+@import "tabs_account/deposit/addbankcard.less";
+//提现订单
+@import "tabs_account/deposit/deposit_details.less";
+//充值详情
+@import "tabs_account/deposit/recharge_detail.less";
+//充值、提现、红包记录
+@import "tabs_account/records/records.less";
+//资金明细
+@import "tabs_account/moneyrecord/moneyrecord.less";
+//邀请好友
+@import "tabs_account/invite/invite.less";
+//推广
+@import "tabs_account/expand/expand.less";
+//我的下线
+@import "tabs_account/offline/offline.less";
+//游戏汇总
+@import "tabs_account/total/total.less";
+//福利
+@import "tabs_account/msg/mymsg.less";
+//红包领取
+@import "tabs_account/redpacket/redpacket.less";
+//救济
+@import "tabs_account/relief/relief.less";
+//我的购彩
+@import "tabs_record/goucai.less";
+//购彩详情订单页
+@import "tabs_record/goucai_details.less";
+//即时比分
+@import "tabs_record/jishibifen.less";
+//出票明细
+@import "tabs_record/tickets_details.less";
+
+//模态框
+@import "modal/modal.less";
+//竞猜大神
+@import "tabs_follow/list.less";
+//神单详情
+@import "tabs_follow/detail.less";
+///////////////////////////////
+///////////////////////////////
+//足球
+
+//投注
+@import "game/football/bet.less";
+//比分
+@import "game/football/bet/bifen.less";
+//让球胜负平
+@import "game/football/bet/rqspf.less";
+//进球数
+@import "game/football/bet/jqs.less";
+//二选一
+@import "game/football/bet/exy.less";
+//一场致胜
+@import "game/football/bet/yczs.less";
+//混投
+@import "game/football/bet/ht.less";
+
+//确认投注的比赛
+@import "game/football/confirm.less";
+//混投
+@import "game/football/confirm/ht.less";
+//让球胜负平
+@import "game/football/confirm/rqsfp.less";
+//进球数
+@import "game/football/confirm/jqs.less";
+//二选一
+@import "game/football/confirm/exy.less";
+//一场致胜
+@import "game/football/confirm/yczs.less";
+//单关比分
+@import "game/football/confirm/dgbf.less";
+
+//确认金额与支付
+@import "game/football/pay.less";
+@import "game/football/paystate.less";
+
+//奖金优化
+@import "game/football/optimize.less";
+
+//足球开奖结果
+@import "game/football/result.less";
+
+///////////////////////////////
+///////////////////////////////
+//篮球
+
+//投注
+@import "game/basketball/bet.less";
+
+//确认投注的比赛
+@import "game/basketball/confirm.less";
+
+//确认金额与支付
+@import "game/basketball/pay.less";
+@import "game/basketball/paystate.less";
+
+//足球开奖结果
+@import "game/basketball/result.less";
+//=========================================
+//任选九
+@import "game/choosenine/bet.less";
+//投注
+@import "game/choosenine/confirm.less";
+//大乐透
+@import "game/dlt/dlt.less";
