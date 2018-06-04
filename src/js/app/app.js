@@ -7,6 +7,7 @@
 require('./routers/_routers');
 require('./services/_servicecs');
 
+
 module.exports=angular.module('app',['ionic','service','router',require('oclazyload')])
 .config(require('./config/config'))
 
