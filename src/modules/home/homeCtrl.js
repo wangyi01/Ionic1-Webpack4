@@ -12,6 +12,7 @@ module.exports = angular.module('home')
   };
   vm.gameList=[];
   vm.jumpTo=jumpTo;
+  gameList();
   /**
   *游戏列表
   */
@@ -21,7 +22,7 @@ module.exports = angular.module('home')
         vm.gameList=res.data;
       }
     })
-  }
+  };
   /**
   * @param {*} obj 游戏列表明细，根据state状态进行跳转
   * state:1跳转,3暂停销售 
