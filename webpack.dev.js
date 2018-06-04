@@ -17,6 +17,12 @@ module.exports = {
   module:{
     rules:[
       {
+        test:/\.js$/,
+        use:['babel-loader?cacheDirectory'],
+        exclude:/node_modules/,
+        include:path.resolve(__dirname,'src')
+      },
+      {
         test:/\.html$/,
         loader:'raw-loader'
       },

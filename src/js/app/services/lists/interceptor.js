@@ -4,14 +4,14 @@
 'use strict';
 module.exports=interceptor;
 
-function interceptor($window){
+function interceptor(){
   return {
-    request:function(config){
-      if($window.localStorage['token']){
-        config.headers['ticket']=$window.localStorage.token;
+    request:(config)=>{
+      if(localStorage.getItem('token')){
+        config.headers['ticket']=localStorage.getItem('token');
       }
       config.headers['company']='zhouyunfei';
       return config;
-    }
+    } 
   }
 }
