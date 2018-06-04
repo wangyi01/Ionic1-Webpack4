@@ -1,0 +1,55 @@
+<ion-view view-title="主页" hide-nav-bar="true">
+  <ion-content>
+    <!-- 首页轮播 -->
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" does-continue="true" slide-interval="4000" show-pager="false" style="height:200px;">
+      <ion-slide>
+        <img class="banner" ng-src="{{vm.img.banner}}">
+      </ion-slide>
+    </ion-slide-box>
+    <!--分割线-->
+    <div class="line"></div>
+    <!--购彩大厅-->
+    <div class="lobby">
+      <p>彩票大厅<span>LOCK</span></p>
+      <ul class="top-border">
+        <li class="right-border bottom-border" ng-repeat="obj in vm.gameList" ng-click="vm.jumpTo(obj)">
+          <img ng-src="{{obj.img}}" alt="">
+          <p>{{obj.title}}</p>
+          <span ng-class="obj.state==3?'stop':''" ng-bind="obj.state==3?'暂停':''"></span>
+        </li>
+        <li class="right-border bottom-border" ui-sref="live" nav-direction="forward">
+          <img ng-src="{{vm.img.aatchAction}}" alt="">
+          <p>实况</p>
+        </li>
+      </ul>
+    </div>
+    <!--分割线-->
+    <div class="line"></div>
+    <!-- 中奖墙、攻略等 -->
+    <section class="win">
+      <div class="win_left right-border">
+        <img ng-src="{{vm.img.winWall}}" alt="">
+        <p>中奖墙</p>
+        <p>沾喜气中大奖</p>
+      </div>
+      <div class="win_right">
+        <ul>
+          <li class="bottom-border">
+            <img ng-src="{{vm.img.winStrategy}}" alt="">
+            <div class="win_right_top">
+              <p>中奖攻略</p>
+              <p>交你如何中奖</p>
+            </div>
+          </li>
+          <li>
+            <img ng-src="{{vm.img.topic}}" alt="">
+            <div class="win_right_top">
+              <p>赛事专题</p>
+              <p>优质赛事解读</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </ion-content>
+</ion-view>

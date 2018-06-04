@@ -1,0 +1,120 @@
+//tabs主页部分
+//banner广告
+.banner{
+  height:200px;
+  width:100%;
+}
+.slider-pager .slider-pager-page {
+  display: inline-block;
+  margin: 0px 3px;
+  width: 12px;
+  color: orange;
+  opacity: 0.3;
+  font-size: 10px;
+}
+//公告
+#marquee{
+  .height(40);
+}
+//分割线
+div.line{
+  .height(5);
+  width:100%;
+  background:#F0F0F0;
+  // .margin-top(10);
+}
+//购彩大厅
+div.lobby{
+  // .height(250);
+  >p{
+    color:#333;
+    .font-size(16);
+    font-weight:bold;
+    text-align:center;
+    .height(50);
+    .line-height(50);
+    span{
+      color:#FF6666;
+      .padding-left(5);
+      .font-size(14);
+    }
+  }
+  >ul{
+    display:flex;
+    flex-wrap:wrap;
+    &:after{
+      height:0;
+    }
+    >li{
+      .height(100);
+      width:33.33333%;
+      text-align:center;
+      font-weight:bold;
+      position:relative;
+      overflow: hidden;
+      img{
+        .width(40);
+        .height(40);
+        .margin-top(15);
+      }
+      span{
+        &.stop{
+          font-size:12px;
+          background:#ccc;
+          .height(17);
+          .line-height(18);
+          color:#fff;
+          font-weight:normal;
+          position: absolute;
+          .width(40);
+          .top(0);
+          .right(0);
+          .border-radius(20);
+          .margin-top(5);
+          .margin-right(5);
+        }
+      }
+    }
+  }
+}
+.win{
+  display:flex;
+  p{
+    font-weight: 600;
+  }
+  p:first-child{
+    .margin-top(19);
+    color:#323232;
+  }
+  p:last-child{
+    color:#999;
+  }
+  .win_left{
+    .padding-top(15);
+    text-align:center;
+    width:50%;
+    img{
+      .width(100);
+    }
+  }
+  .win_right{
+    display:flex;
+    width:50%;
+    align-items:center;
+    ul{
+      width:100%;
+      li{
+        display:flex;
+        .padding-top(4);
+        .padding-bottom(4);
+        img{
+          .width(80);
+          .height(80);
+        }
+        .win_right_top{
+          width:80%;
+        }
+      }
+    }
+  }
+}
