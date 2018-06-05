@@ -8,3 +8,5 @@ module.exports = angular.module('service', [])
 .factory('interceptor',require('./lists/interceptor'))
 /**首页游戏列表 */
 .service('list',require('../../../modules/home/_homeService'))
+/**大神跟单 */
+.service('followList',require('../../../modules/follow/_followService'))

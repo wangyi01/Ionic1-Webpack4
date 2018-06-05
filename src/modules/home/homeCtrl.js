@@ -21,7 +21,7 @@ module.exports = angular.module('home')
       if(res.status==1){
         vm.gameList=res.data;
       }
-    })
+    });
   };
   /**
   * @param {*} obj 游戏列表明细，根据state状态进行跳转

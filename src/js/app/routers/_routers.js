@@ -3,6 +3,10 @@
 */
 'use strict';
 module.exports=angular.module('router',[
+  /**tabs router */
   require('../../../modules/tabs/_tabsRouter'),
-  require('../../../modules/home/_homeRouter')
+  /**首页 */
+  require('../../../modules/home/_homeRouter'),
+  /**大神跟单 */
+  require('../../../modules/follow/_followRouter')
 ])

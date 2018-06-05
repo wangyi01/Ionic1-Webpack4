@@ -1,0 +1,70 @@
+<ion-view view-title="神单列表" hide-nav-bar="true">
+  <ion-header-bar class="godplay_head">
+     <p class="title" style="color:#fff;">神单列表</p>
+     <div class="buttons">
+        <span class="button search ion-ios-search-strong" style="background:transparent;border:none;" ng-click="vm.showSearch = !vm.showSearch"></span>
+     </div>
+  </ion-header-bar>
+  <div class="sort">
+     <div class="search_module" ng-if="vm.showSearch" ng-click="vm.showSearch = !vm.showSearch">
+        <div class="search_bar clear"  ng-click="$event.stopPropagation();">
+           <label class="item-input">
+              <i class="icon ion-search placeholder-icon"></i>
+              <input type="search" placeholder="请输入发起人的名字" ng-model="vm.searchName">
+           </label>
+           <span ng-click="vm.search()">搜索</span>
+           <span ng-click="vm.showSearch = !vm.showSearch">取消</span>
+        </div>
+     </div>
+     <div ng-repeat="item in vm.sortList" class="sort_tab" ng-class="item.active?'active':''" ng-click="vm.choseSort(item)">
+        {{item.text}}
+        <div class="sort_state" ng-if="item.active&&item.text!='人气'">
+           <span class="ion-android-arrow-dropup" ng-class="item.sort?'active':''"></span>
+           <span class="ion-android-arrow-dropdown" ng-class="!item.sort?'active':''"></span>
+        </div>
+     </div>
+  </div>
+  <ion-content class="godplay_content allgodplay_content">
+        <ion-refresher pulling-text="下拉刷新" on-refresh="vm.doRefresh()"></ion-refresher>
+     <div class="godplay_list top-border">
+        <ul>
+           <li class="follow_item" ng-repeat="obj in vm.orderList" ng-click="vm.goDetail(obj)"><!-- followdetail -->
+              <div class="follow_own">
+                 <img ng-src="{{obj.avatar}}" alt="">
+                 <div class="follow_name">
+                    <p>
+                       <span>{{obj.nickname}}</span>
+                       <span class="pubstate four-border">{{{1:'公开',2:'赛后公开'}[obj.pubstate]}}</span>
+                       <span class="lianhong" ng-if="!(obj.lianhong==null||obj.lianhong<2)">{{(obj.lianhong==null||obj.lianhong<2)?'':obj.lianhong+'连红'}}</span>
+                    </p>
+                    <div class="time">
+                       截止时间：<span>{{obj.endtime|date:'MM-dd HH:mm:ss'}}</span>
+                       <img ng-src="{{vm.img.bao}}" alt="" ng-if="obj.guarantee">
+                       <span class="minodd">{{obj.guarantee}}</span>
+                    </div>
+                 </div>
+                 <img ng-src="{{vm.img[obj.type]}}" alt="">
+              </div>
+              <p class="words">{{obj.statement}}</p>
+              <div class="underline"></div>
+              <div class="follow_num">
+                 <div class="money">
+                    <p>{{obj.bettingmoney+'元'}}</p>
+                    <span>方案总金额</span>
+                 </div>
+                 <div class="people">
+                    <p>方案内容：<span>{{{1:'竞足混合',3:'竞篮混合',4:'北京单场'}[obj.type]}}</span></p>
+                    <p>跟投人数：<span>{{obj.betnum+'人'}}</span></p>
+                 </div>
+              </div>
+              <div class="min_follow">
+                 <p>最小跟投：<span>{{obj.minbetting+'元'}}</span></p>
+                 <button>立即跟投</button>
+              </div>
+           </li>
+        </ul>
+     </div>
+     <p class="noData" ng-if="vm.showNoData">暂无数据</p>
+     <ion-infinite-scroll ng-if="vm.hasMore" immediate-check="false" on-infinite="vm.loadMore()"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>
