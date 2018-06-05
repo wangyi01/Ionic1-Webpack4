@@ -2,8 +2,8 @@
 module.exports=baseInfor;
 function baseInfor(){
   let infor={
-    company:'zhouyunfei',
-    url:'http://api1.hqjc888.com/api/'
+    company:'fhwc',
+    url:'http://api1.fhwcai.com:8880/api/'
   };
   return infor;
 }

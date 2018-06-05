@@ -11,7 +11,7 @@ function followList($q,$http){
           pagenum: params.pageSize,
           type: params.type,
           order: params.order,
-          nickname: params.nickName
+          nickname: params.nickname
         }
       }).success(res=>{
         return deferred.resolve(res);
