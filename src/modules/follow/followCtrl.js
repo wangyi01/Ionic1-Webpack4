@@ -64,11 +64,7 @@ module.exports = angular.module('follow')
           if (type == 'sort') {
             vm.orderList = res.data;
           } else {
-            if (vm.orderList && vm.orderList.length) {
-              vm.orderList = vm.orderList.concat(res.data);
-            } else {
-              vm.orderList = res.data;
-            }
+            vm.orderList && vm.orderList.length ? (vm.orderList = vm.orderList.concat(res.data)) : (vm.orderList = res.data);
           }
           res.data.length == params.pageSize ? vm.hasMore = true : vm.hasMore = false;
         } else {
@@ -90,18 +86,10 @@ module.exports = angular.module('follow')
     };
 
     function choseSort(obj) {
-      if (!obj.active) {
-        angular.forEach(vm.sortList, (item) => {
-          if (obj.text == item.text) {
-            item.active = true;
-            choseingSort = item;
-          } else {
-            item.active = false;
-          }
-        });
-      } else {
-        obj.sort = !obj.sort;
-      };
+      !obj.active && angular.forEach(vm.sortList, (item) => {
+        obj.text == item.text ? (item.active = true, choseingSort = item) : (item.active = false);
+      });
+      obj.sort = !obj.sort;
       $ionicScrollDelegate.scrollTop();
       pageNum = 1;
       pageSize = 10;
