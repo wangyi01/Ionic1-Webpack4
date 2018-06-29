@@ -42,6 +42,7 @@
     "webpack-parallel-uglify-plugin": "^1.1.0"
   },
   "devDependencies": {
+    "cors": "^2.8.4",
     "express": "^4.16.3"
   }
 }
