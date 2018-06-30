@@ -3,7 +3,7 @@ module.exports=angular.module('home',[])
 .config(['$stateProvider',function($stateProvider){
   $stateProvider.state('tab.home',{
     url:'/home',
-    views:{
+    views:{ 
       'tab-home':{
         templateProvider:function($q){
           var deferred=$q.defer();
