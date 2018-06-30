@@ -2,7 +2,7 @@ const http = require('http');
 const config = require('../config/config');
 const options = config('/api/img/gamecontents');
 module.exports = home;
-
+  
 function home() {
   const promise = new Promise((resolve, reject) => {
     http.get(options, (res, req, next) => {
@@ -23,6 +23,7 @@ function home() {
             gameLists.data.push(gameInfor);
           });
           gameLists.status=parseData.status;gameLists.msg=parseData.msg;
+          // console.log(gameLists);
           resolve(gameLists);
         } catch (e) {
           // reject(e);

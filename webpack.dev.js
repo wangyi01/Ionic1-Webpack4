@@ -4,10 +4,14 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
-  entry: {
-    serve:'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
-    app:'./src/js/main.js'
-  },
+  // entry: {
+  //   serve:'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
+  //   app:'./src/js/main.js'
+  // },
+  entry: [
+    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
+    './src/js/main.js'
+  ],
   output: {
     filename: 'js/[name].[hash:8].js',
     chunkFilename: 'js/[name].[chunkhash].js',
